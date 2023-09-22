@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://index.docker.io/v1/
-        username: ${{ secrets.AzureAppService_ContainerUsername_1f5c57081d2a4f53bb630f0aede7a6ad }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_8caee7561e144f828e464dc66f679bcd }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_3b872b15ef604c60b6d7f2f87b269af6 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_892645bc43f84818891c066a47c74031 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_1f5c57081d2a4f53bb630f0aede7a6ad }}/mcr.microsoft.com/appsvc/staticsite:${{ github.sha }}
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_3b872b15ef604c60b6d7f2f87b269af6 }}/mcr.microsoft.com/appsvc/staticsite:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'rm87273-ECOMMERCE-DEV'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_99806ea07f52438d97923e7262ebd6b1 }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_1f5c57081d2a4f53bb630f0aede7a6ad }}/mcr.microsoft.com/appsvc/staticsite:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_4af91e4502af438eb3a2573699bb88f9 }}
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_3b872b15ef604c60b6d7f2f87b269af6 }}/mcr.microsoft.com/appsvc/staticsite:${{ github.sha }}'
