@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://index.docker.io/v1/
-        username: ${{ secrets.AzureAppService_ContainerUsername_e318abf2131e4f0fbe3641b2491412d3 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_1e0dd7fa915d42a1aaabc50909201e62 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_4b58e2dfc12b464e8fdae039b4510424 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_1f687dd48fe9487d92ed47b92ef24cac }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_e318abf2131e4f0fbe3641b2491412d3 }}/checkpoint2:${{ github.sha }}
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_4b58e2dfc12b464e8fdae039b4510424 }}/checkpoint2:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'rm87273-ECOMMERCE-STG'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_b6049fceaf124a53b7905584aaa99472 }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_e318abf2131e4f0fbe3641b2491412d3 }}/checkpoint2:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_2a8993bd04d343cd8411d6afceb9be4c }}
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_4b58e2dfc12b464e8fdae039b4510424 }}/checkpoint2:${{ github.sha }}'
