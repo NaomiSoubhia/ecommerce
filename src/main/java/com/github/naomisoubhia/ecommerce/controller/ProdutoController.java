@@ -21,7 +21,7 @@ import com.github.naomisoubhia.ecommerce.repository.ProdutoRepository;
 import com.github.naomisoubhia.ecommerce.service.ProdutoService;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/produto")
 public class ProdutoController {
 
 	@Autowired
