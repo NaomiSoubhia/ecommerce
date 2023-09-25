@@ -83,11 +83,4 @@ public class ProdutoController {
 
 }
 
-@Controller
-public class HomeController {
 
-    @RequestMapping("/")
-    public RedirectView redirect() {
-        return new RedirectView("/swagger-ui.html");
-    }
-}
