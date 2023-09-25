@@ -79,9 +79,11 @@ public class ProdutoController {
 		produtoRepository.deleteById(id);		
 	}
 
+
+
+}
+
 	@RequestMapping("/")
 	public RedirectView redirect() {
         return new RedirectView("/swagger-ui.html");
 		}
-
-}
