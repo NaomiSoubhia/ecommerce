@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class PingController {
 	
 
-	//@Value("${mensagem}")
-	//private String mensagem;
+	@Value("${mensagem}")
+	 String mensagem;
 
     @GetMapping("/ping")
     public String ping() {
