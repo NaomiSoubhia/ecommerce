@@ -10,8 +10,5 @@ public class Application {
 		SpringApplication.run(Application.class, args);
 	}
 
-   @RequestMapping("/")
-    public RedirectView redirect() {
-        return new RedirectView("/swagger-ui.html");
-    }
+
 }
