@@ -12,11 +12,10 @@ import org.springframework.beans.factory.annotation.Value;
 @RequestMapping
 public class PingController {
 	
-	@Value("${mensagem}")
-	private String mensagem;
+
 
     @GetMapping("/ping")
     public String ping() {
-        return "ping pong: " + mensagem;
+        return "ping pong: " ;
     }
 }
