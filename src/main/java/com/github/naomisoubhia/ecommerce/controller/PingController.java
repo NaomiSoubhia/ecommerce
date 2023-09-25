@@ -10,8 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping
 public class PingController {
 
+	@Value("${mensagem}")
+	private String mensagem;
+
     @GetMapping("/ping")
     public String ping() {
-        return "pong ";
+        return "ping pong: " + mensagem;
     }
 }
